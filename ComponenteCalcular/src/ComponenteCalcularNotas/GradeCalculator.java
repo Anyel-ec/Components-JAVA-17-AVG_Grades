@@ -1,9 +1,16 @@
 package ComponenteCalcularNotas;
+import javax.swing.*;
+import java.awt.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class GradeCalculator{
+public class GradeCalculator extends JButton {
+    // constructor
+    public GradeCalculator(String text) {
+        super(text);
+        this.setBackground(Color.black);
+    }
     public static Map<String, Object> guardarNotasEstudiante(String nombre, List<Double> notas) {
         Map<String, Object> registroNotas = new HashMap<>();
 
@@ -13,10 +20,10 @@ public class GradeCalculator{
         }
         double promedio = suma / notas.size();
 
-        registroNotas.put("nombre", nombre);
-        registroNotas.put("notas", notas);
-        registroNotas.put("promedio", promedio);
+            registroNotas.put("nombre", nombre);
+            registroNotas.put("notas", notas);
+            registroNotas.put("promedio", promedio);
 
-        return registroNotas;
+            return registroNotas;
+        }
     }
-}
